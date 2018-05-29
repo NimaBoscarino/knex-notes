@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lyrics</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div>
+      <h1><a href="/">KanyeLyrics.com</a></h1>
+        <form id="editedLyric" action=<%=`/lyrics/${id}/edit` %> method="POST">
+          <textarea
+            type="text"
+            name="title"
+            class="title-input"
+          ><%=`${title}`%></textarea>
+          <textarea class="lyrics-input" name="edited_lyric" form="editedLyric"><%=`${lyrics}`%></textarea>          
+          <input type="submit" value="Save"/>       
+        </form>    
+      <div class="arms-container">
+        <img class="arms" src="/images/arms.png"/>
+      </div>
+    </div>
+    <div>
+      <img class="face" src="/images/face.png"/>
+    </div>
+  </body>
+</html>

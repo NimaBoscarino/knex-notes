@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kanye Lyrics</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div>
+      <h1><a href="/">KanyeLyrics.com</a></h1>
+      <p>Welcome to Kanye Lyrics, the premier source for Kanye West's Lyrics</p>
+      <a href="lyrics/new"><button>Add Lyrics</button></a>
+      <h2>Songs:</h2>
+      <ul>
+        <% for (song of songs) {%>
+          <li>
+            <a href=<%= `lyrics/${song.id}` %>><%= song.title %></a>
+          </li>
+        <% } %>
+      </ul>
+      <div class="arms-container">
+        <img class="arms" src="/images/arms.png"/>
+      </div>
+    </div>
+    <div>
+      <img class="face" src="/images/face.png"/>      
+    </div>
+  </body>
+</html>

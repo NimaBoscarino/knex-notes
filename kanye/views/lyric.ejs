@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lyrics</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div>
+      <h1><a href="/">KanyeLyrics.com</a></h1>
+      <div class="button-container">
+          <a href=<%=`${id}/edit` %> ><button>Edit</button></a>
+          <form action=<%=`${id}/delete` %> method="POST">
+            <input type="submit" value="Delete"/>
+          </form>    
+      </div>
+      <h2><%= title %></h2>
+      <% lyrics.split('\\n').forEach(stanza => { %>
+        <p><%= stanza.includes("googletag") ? "" : stanza %></p>
+      <% }) %>
+      <div class="arms-container">
+        <img class="arms" src="/images/arms.png"/>
+      </div>
+    </div>
+    <div>
+      <img class="face" src="/images/face.png"/>
+    </div>
+  </body>
+</html>
