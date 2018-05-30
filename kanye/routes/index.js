@@ -1,14 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-const { Client } = require('pg')
-const client = new Client({
-  database: 'hiphop'
-})
+const config = require('../knexfile')['development']
+const knex = require('knex')(config)
 
-client.connect()
-
-const { getSongs } = require('../data/data-songs')(client);
+const { getSongs } = require('../data/data-songs')(knex);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
