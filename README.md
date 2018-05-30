@@ -75,7 +75,7 @@ exports.down = function(knex, Promise) {
 };
 ```
 
-There are many different things we can do in a migration. Take a look in the `migrations` folder in the `kanye` project to see some examples. To all the migrations (up to the most recent), we hop into the command line and run `knex migrate:latest`. We can always roll backwards one version by running `knex migrate:rollback`.
+There are many different things we can do in a migration. Take a look in the `migrations` folder in the `kanye` project to see some examples. To run all the migrations (up to the most recent), we hop into the command line and run `knex migrate:latest`. We can always roll backwards one version by running `knex migrate:rollback`. Don't worry if you're still a little confused with this, you're going to get real comfortable with migrations when we get to Ruby on Rails!
 
 ### Seeding
 
