@@ -16,13 +16,26 @@ function makeSongsData(knex) {
         })        
     }
 
-
     function getSongs(cb) {
-        knex.select('id', 'title').from('songs')
-            .asCallback((err, res) => {
-                cb(err, res)
-            })
+        client.query('SELECT id, title FROM songs', (err, res) => {
+            cb(err, res.rows)
+        })        
     }
+  
+    function updateSongById(id, updateData, cb) {
+        let lyric = updateData.edited_lyric
+        client.query('UPDATE lyrics SET text = $1 WHERE id = $2', [lyric, id], (err, res) => {
+            console.log(res.rows)
+            cb(err, null)
+        })
+    }
+
+    // function getSongs(cb) {
+    //     knex.select('id', 'title').from('songs')
+    //         .asCallback((err, res) => {
+    //             cb(err, res)
+    //         })
+    // }
   
     return {
         getSongById,
