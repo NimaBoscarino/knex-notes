@@ -1,5 +1,7 @@
 ## Knex
 
+[Today's code on Github!](https://github.com/NimaBoscarino/knex-notes)
+
 This breakout is pretty packed! Here we introduce Knex, an SQL query builder for Node. As always, let's start off by listing out some links to documenation:
 
 1. [Knex Docs](https://knexjs.org/)
@@ -13,6 +15,7 @@ The main goals for the breakout were...
 3. Migrations:
     - Why do migrations exist?
     - Actually, what are they even?
+4. Seeds
 
 ### Knex Intro
 First, let's start by installing Knex. You should install Knex globally (`npm i --global knex`) to get access to the command-line tools. You should also install knex locally (`npm i knex --save`) to use Knex in your app. In your main folder for your app, run `knex init`. This generates a configuration file

@@ -1,32 +1,27 @@
 var knex = require('knex')({
-    client: 'pg',
-    connection: {
-      database : 'hiphop'
-    }
+  client: 'pg',
+  connection: {
+    database: 'hippity_hop'
+  }
 });
 
-knex.select('name').from('artists')
-    .asCallback((err, res) => {
-        if (err) {
-            console.log(err)
-        } else {
-            console.log(res)
-        }
+// SELECT * FROM artists
+knex.select('*').from('artists').asCallback((err, artists) => {
+  artists.forEach(artist => {
+    // get all the songs for the artist
+
+    knex('songs').where({
+      artist_id: artist.id,
+    }).select('title').then((titles) => {
+      console.log('haha!', artist.name)
+      console.log(titles)
     })
 
-knex.insert([{name: 'Billy'}], '*').into('artists')
-    .asCallback((err, res) => {
-        err ? console.log(err) : console.log(res)
-        knex.select('name').from('artists')
-        .asCallback((err, res) => {
-            if (err) {
-                console.log("error:", err)
-            } else {
-                console.log(res)
-            }
-        })
-    
-    })
+  })
+})
 
 
-
+knex.select('*').from('artists').asCallback((err, artists) => {
+  console.log(artists)
+  knex.destroy()
+})
