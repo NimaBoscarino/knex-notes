@@ -2,6 +2,8 @@
 
 [Today's code on Github!](https://github.com/NimaBoscarino/knex-notes)
 
+Check notes_cool.md for the notes we wrote in class.
+
 This breakout is pretty packed! Here we introduce Knex, an SQL query builder for Node. As always, let's start off by listing out some links to documenation:
 
 1. [Knex Docs](https://knexjs.org/)

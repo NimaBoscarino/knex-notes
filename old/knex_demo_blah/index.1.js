@@ -23,5 +23,5 @@ knex.select('*').from('artists').asCallback((err, artists) => {
 
 knex.select('*').from('artists').asCallback((err, artists) => {
   console.log(artists)
-  knex.destroy()
+  // knex.destroy()
 })

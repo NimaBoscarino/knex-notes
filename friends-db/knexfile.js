@@ -5,9 +5,8 @@ module.exports = {
   development: {
     client: 'pg',
     connection: {
-      database: 'hippity_hop'
+      database: 'friendsdatabase' // DONT HAVE CAPS IN HERE
     }
-  
-  }
+  },
 
 };
